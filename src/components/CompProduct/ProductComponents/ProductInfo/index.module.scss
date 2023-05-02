@@ -1,0 +1,53 @@
+@import "/src/styles/globalMixins.scss";
+
+.info {
+  @include adaptive-size(20, 15, margin-bottom);
+  @include adaptive-size(20, 15, padding-bottom);
+
+  position: relative;
+  border-bottom: 1px solid #e7e7e7;
+
+  &_title {
+    @include adaptive-size(20, 15, margin-bottom);
+    @include adaptive-size(16, 10, font-size);
+    @include adaptive-size(20, 13, line-height);
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &_name {
+    @include adaptive-size(22, 14, font-size);
+    @include adaptive-size(28, 16, line-height);
+    margin-bottom: 15px;
+  }
+
+  &_like {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  &_price {
+    @include adaptive-size(28, 16, font-size);
+    @include adaptive-size(35, 20, line-height);
+    @include adaptive-size(20, 15, margin-bottom);
+    display: block;
+
+    font-weight: 700;
+  }
+
+  &_descrTitle {
+    @include adaptive-size(22, 14, font-size);
+    @include adaptive-size(28, 18, line-height);
+    margin-bottom: 10px;
+  }
+
+  &_descrText {
+    @include adaptive-size(16, 12, font-size);
+    @include adaptive-size(20, 15, line-height);
+  }
+}

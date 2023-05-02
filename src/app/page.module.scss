@@ -1,0 +1,67 @@
+@import "../styles/globalMixins.scss";
+
+.home {
+  @include adaptive-size(30, 15, padding-top);
+
+  &_img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  &_about {
+    @include adaptive-768(36, 20, padding-top);
+    @include adaptive-768(36, 20, padding-bottom);
+    @include adaptive-768(70, 40, margin-bottom);
+    background-color: var(--color-white);
+    box-shadow: -4px 4px 16px rgba(172, 172, 172, 0.15), 4px 4px 16px rgba(172, 172, 172, 0.15);
+    border-radius: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      max-width: 89%;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  section {
+    @include adaptive-size(40, 10, padding-top);
+    @include adaptive-size(20, 10, padding-bottom);
+    @include adaptive-size(30, 5, padding-right);
+    @include adaptive-size(30, 5, padding-left);
+    @include adaptive-size(100, 30, border-radius);
+
+    box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25), -4px 4px 16px rgba(172, 172, 172, 0.15),
+      4px 4px 16px rgba(172, 172, 172, 0.15);
+    background-color: var(--color-white);
+    position: relative;
+
+    h2 {
+      @include adaptive-size(40, 30, margin-bottom);
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      @include adaptive-size(40, 15, margin-bottom);
+    }
+
+    &:last-child {
+      @include adaptive-768(55, 0, margin-bottom);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_img,
+    &_about {
+      display: none;
+    }
+  }
+}

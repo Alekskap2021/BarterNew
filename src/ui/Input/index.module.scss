@@ -1,0 +1,43 @@
+@import "/src/styles/globalMixins.scss";
+
+.input {
+  @include adaptive-size(14, 12, padding-top);
+  @include adaptive-size(14, 12, padding-bottom);
+  @include adaptive-size(20, 15, padding-left);
+  @include adaptive-size(20, 15, padding-right);
+  border-radius: 48px;
+  border: none;
+  width: 100%;
+
+  &_wrapper {
+    position: relative;
+  }
+
+  &_hideBtn {
+    position: absolute;
+    @include adaptive-size(20, 15, right);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &_error {
+    color: #eb6767;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.grey {
+  background-color: #e7e7e7;
+}
+
+.label {
+  @include adaptive-size(14, 12, font-size);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-font-secondary);
+  position: relative;
+  padding-bottom: 15px;
+}

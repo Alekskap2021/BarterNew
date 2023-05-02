@@ -1,0 +1,130 @@
+@import "/src/styles/globalMixins.scss";
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  //   gap: 10px;
+
+  &_input {
+    @include adaptive-size(25, 15, margin-bottom);
+
+    &_hidden {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      top: -100vw;
+    }
+  }
+
+  &_forgotPass {
+    @include adaptive-size(12, 10, font-size);
+    align-self: center;
+    color: var(--color-font-secondary);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &_forgotPassTitle {
+    @include adaptive-size(28, 20, font-size);
+    @include adaptive-size(40, 30, margin-bottom);
+  }
+
+  &_forgotPassDescr {
+    @include adaptive-size(14, 10, font-size);
+    @include adaptive-size(40, 30, margin-bottom);
+  }
+
+  &_checkbox {
+    margin-bottom: 15px !important;
+    font-size: 10px;
+  }
+
+  &_submitBtns {
+    @include adaptive-size(25, 15, gap);
+    display: flex;
+    flex-direction: column;
+
+    &_changePass {
+      .auth_authWith {
+        display: none;
+      }
+    }
+  }
+
+  &_authWith {
+    position: relative;
+    align-self: center;
+
+    display: flex;
+    gap: 32px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-font-secondary);
+      width: 1px;
+      height: 16px;
+    }
+  }
+
+  &_submit {
+    box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.25);
+  }
+
+  &_repeatQuery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 5px;
+
+    &_title {
+      @include adaptive-size(14, 12, font-size);
+      text-align: center;
+    }
+
+    &_descr {
+      font-size: 14px;
+      color: var(--color-accent);
+    }
+
+    &_btn {
+      font-size: 14px;
+      color: var(--color-accent);
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_submitBtns {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(350px, 100% - 10px);
+      flex-direction: column-reverse;
+      padding-bottom: 15px;
+
+      &_changePass {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+
+        .auth_authWith {
+          display: none;
+        }
+      }
+    }
+  }
+}

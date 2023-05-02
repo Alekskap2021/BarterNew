@@ -1,0 +1,31 @@
+.footer {
+  padding: 20px;
+  padding-bottom: 10px;
+  border-top: 1px solid #e7e7e7;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+
+  input {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  textarea {
+    resize: none;
+    flex: 1 1 auto;
+    border: none;
+    outline: transparent;
+    height: auto;
+    font-size: 15px;
+    line-height: 120%;
+    height: 15px;
+  }
+}

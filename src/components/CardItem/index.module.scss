@@ -1,0 +1,457 @@
+@import "../../styles/globalMixins.scss";
+
+.card {
+  @include adaptive-size(47, 30, padding-bottom);
+  background-color: var(--color-white);
+
+  border-radius: 20px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &_label {
+    @include adaptive-size(7, 3, padding-top);
+    @include adaptive-size(7, 3, padding-bottom);
+    @include adaptive-size(14, 5, padding-right);
+    @include adaptive-size(14, 5, padding-left);
+    @include adaptive-size(13, 5, top);
+    @include adaptive-size(13, 5, left);
+    @include adaptive-size(10, 5, font-size);
+
+    position: absolute;
+    background-color: var(--color-accent);
+    border-radius: 20px;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  &_favoritesBtn {
+    @include adaptive-size(13, 5, top);
+    @include adaptive-size(13, 8, right);
+
+    position: absolute;
+  }
+
+  &_img {
+    @include adaptive-size(239, 110, width);
+    @include adaptive-size(176, 71, height);
+    @include adaptive-size(8, 3, margin-bottom);
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &_container {
+    @include adaptive-size(13, 8, padding-right);
+    @include adaptive-size(13, 8, padding-left);
+  }
+
+  &_title {
+    @include adaptive-size(18, 8, font-size);
+    @include adaptive-size(15, 8, margin-bottom);
+    @include adaptive-size(10, 4, padding-bottom);
+    border-bottom: 1px solid var(--color-font-main);
+
+    font-weight: 600;
+  }
+
+  &_price {
+    @include adaptive-size(18, 8, font-size);
+
+    font-weight: 700;
+  }
+
+  &_date {
+    @include adaptive-size(20, 6, bottom);
+    @include adaptive-size(12, 6, right);
+    @include adaptive-size(10, 8, font-size);
+    position: absolute;
+    font-weight: 600;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--color-accent);
+    cursor: pointer;
+  }
+}
+
+.bigCard {
+  @include adaptive-size(20, 8, padding-top);
+  @include adaptive-size(20, 8, padding-bottom);
+  @include adaptive-size(20, 8, padding-left);
+  @include adaptive-size(20, 8, padding-right);
+
+  box-shadow: -5px -6px 18px 8px rgba(156, 156, 156, 0.25),
+    5px 6px 18px 8px rgba(156, 156, 156, 0.25);
+  border-radius: 20px;
+
+  display: flex;
+  gap: 20px;
+
+  &_text,
+  &_price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_text {
+    gap: 10px;
+
+    h3 {
+      @include adaptive-size(20, 12, font-size);
+      @include adaptive-size(25, 15, line-height);
+      font-weight: 600;
+    }
+
+    span:first-of-type {
+      @include adaptive-size(12, 6, font-size);
+
+      padding: 5px 15px;
+      background: #e7e7e7;
+      border-radius: 20px;
+      align-self: flex-start;
+      text-align: center;
+    }
+
+    span:last-of-type {
+      @include adaptive-size(16, 10, font-size);
+      @include adaptive-size(20, 13, line-height);
+
+      margin-top: auto;
+      color: var(--color-font-secondary);
+    }
+  }
+
+  &_price {
+    margin-left: auto;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    span {
+      @include adaptive-size(32, 14, font-size);
+      @include adaptive-size(40, 18, line-height);
+      font-weight: 700;
+    }
+  }
+
+  &_img {
+    @include adaptive-size(213, 106, width);
+    @include adaptive-size(146, 87, height);
+    object-fit: cover;
+  }
+
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    position: relative;
+    align-items: flex-start;
+    padding-bottom: 40px;
+
+    &_text {
+      flex: 1 1 auto;
+      width: 50%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: repeat(2, 30px);
+
+      h3 {
+        grid-column: span 2;
+      }
+
+      span:first-of-type {
+        margin: 0;
+        grid-column: 2 / span 1;
+      }
+
+      span:last-of-type {
+        margin: 0;
+        grid-column: 1 / span 1;
+        grid-row: 2/3;
+      }
+    }
+
+    &_price {
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0;
+      right: 10px;
+      left: 10px;
+      bottom: 5px;
+      width: calc(100% - 15px);
+      position: absolute;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &_text {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 5px;
+
+      span:first-of-type {
+        grid-column: 1 / -1;
+      }
+
+      span:last-of-type {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
+
+.cardAdvert {
+  background-color: var(--color-white);
+  box-shadow: -5px -6px 18px 8px rgba(156, 156, 156, 0.25),
+    5px 6px 18px 8px rgba(156, 156, 156, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 13px;
+
+  &_wrapper {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 10px;
+  }
+
+  .label {
+    display: none;
+  }
+
+  &_title {
+    @include adaptive-size(20, 12, font-size);
+    @include adaptive-size(25, 15, line-height);
+    font-weight: 600;
+  }
+
+  &_adress {
+    @include adaptive-768(16, 12, font-size);
+    @include adaptive-768(20, 15, line-height);
+  }
+
+  &_date {
+    @include adaptive-size(16, 12, font-size);
+  }
+
+  &_price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+
+  &_icons {
+    @include adaptive-1024-mob(30, 5, gap);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      @include adaptive-size(16, 12, font-size);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-style: normal;
+      color: var(--color-font-secondary);
+
+      svg {
+        @include adaptive-1024-mob(20, 16, width);
+        @include adaptive-1024-mob(20, 16, height);
+      }
+    }
+  }
+
+  &_btns {
+    @include adaptive-size(16, 12, font-size);
+    @include adaptive-768-mob(40, 10, gap);
+    padding-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+
+      &:first-child {
+        color: var(--color-font-secondary);
+      }
+
+      &:nth-child(2) {
+        padding: 6px 10px;
+        background: linear-gradient(90deg, #f9d423 0%, #ffe24c 52.4%, #f9cb26 100%);
+        box-shadow: 0px 4px 4px rgba(173, 181, 222, 0.27);
+        border-radius: 53px;
+        font-weight: 600;
+        color: var(--color-white);
+      }
+
+      &:last-child {
+        // margin-left: auto;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    svg {
+      //   @include adaptive-768-mob(20, 12, width);
+      //   @include adaptive-768-mob(20, 12, height);
+    }
+  }
+
+  .price {
+    @include adaptive-size(32, 12, font-size);
+    font-weight: 700;
+
+    &_info {
+      display: none;
+    }
+
+    &_red {
+      color: #f04a33;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &_icons {
+      flex-wrap: wrap;
+      gap: 15px;
+
+      i {
+        width: 40%;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_wrapper {
+      flex-wrap: wrap;
+    }
+
+    &_info {
+      width: min-content;
+    }
+
+    &_icons {
+      width: 100%;
+    }
+
+    &_price {
+      width: 100%;
+      flex-wrap: nowrap;
+
+      i {
+        width: auto;
+      }
+    }
+
+    &_adress {
+      display: none;
+    }
+
+    &_btns {
+      justify-content: space-between;
+    }
+
+    .price {
+      &_info {
+        display: block;
+      }
+      &_main {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    &_btns {
+      flex-wrap: wrap;
+      button {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &.waiting,
+  &.rejected,
+  &.inactive {
+    .price {
+      display: none;
+    }
+
+    .cardAdvert_icons {
+      display: none;
+    }
+
+    .cardAdvert_btns {
+      display: none;
+    }
+
+    .cardAdvert_wrapper {
+      border: none;
+    }
+  }
+
+  &.unpaid {
+    .cardAdvert_icons {
+      display: none;
+    }
+
+    .cardAdvert_btns {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &.waiting {
+    .cardAdvert_price {
+      display: none;
+    }
+    .cardAdvert_wrapper {
+      padding: 0;
+    }
+  }
+
+  &.rejected,
+  &.inactive {
+    .label {
+      display: block;
+      @include adaptive-size(16, 12, font-size);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .cardAdvert_wrapper {
+        gap: 10px;
+      }
+    }
+  }
+}

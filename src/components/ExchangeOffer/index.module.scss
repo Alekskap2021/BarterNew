@@ -1,0 +1,153 @@
+@import "/src/styles/globalMixins.scss";
+
+.offer {
+  &_count {
+    @include adaptive-size(20, 14, font-size);
+    @include adaptive-size(20, 10, margin-bottom);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &_goods {
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
+    margin-bottom: 20px;
+  }
+
+  .item {
+    box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25), -4px 4px 16px rgba(172, 172, 172, 0.15),
+      4px 4px 16px rgba(172, 172, 172, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+      @include adaptive-size(20, 14, font-size);
+      font-weight: 600;
+    }
+
+    h3 {
+      @include adaptive-size(18, 12, font-size);
+      font-weight: 600;
+    }
+
+    &_price {
+      @include adaptive-size(20, 12, font-size);
+      font-weight: 700;
+    }
+
+    &_img {
+      @include adaptive-size(150, 87, width);
+      @include adaptive-size(121, 70, height);
+      object-fit: contain;
+    }
+
+    &_text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &_info {
+    margin-bottom: 20px;
+    h3 {
+      @include adaptive-size(20, 14, font-size);
+      @include adaptive-size(20, 10, margin-bottom);
+      font-weight: 600;
+    }
+
+    h4 {
+      font-weight: 600;
+      display: inline;
+    }
+
+    p {
+      @include adaptive-size(10, 5, margin-bottom);
+      @include adaptive-size(16, 12, font-size);
+    }
+  }
+
+  &_btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  &_btn {
+    @include adaptive-size(14, 9, font-size);
+    box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.25);
+    border-radius: 53px !important;
+    padding: 10px 15px !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &_accept {
+    background: #60b56f;
+    color: var(--color-white);
+  }
+
+  &_reject {
+    background: #dd4756;
+    color: var(--color-white);
+  }
+
+  &_delivery {
+    border: 2px solid #60b56f;
+    margin: 0 auto;
+  }
+
+  &_chat {
+    border: 2px solid var(--color-font-secondary);
+    color: var(--color-font-secondary);
+    box-shadow: none;
+  }
+
+  @media (max-width: 768px) {
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 20px;
+
+    &_goods {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e7e7e7;
+    }
+
+    .item {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: 20px 1fr;
+      box-shadow: none;
+      padding: 0;
+
+      h3 {
+        grid-column: span 2;
+        font-size: 14px;
+      }
+
+      &_cats,
+      &_adress {
+        display: none;
+      }
+    }
+
+    // &_btns {
+    //   padding-bottom: 20px;
+    // }
+  }
+}

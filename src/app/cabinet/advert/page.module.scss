@@ -1,0 +1,51 @@
+@import "/src/styles/globalMixins.scss";
+@import "/src/app/cabinet/nestedLayout.scss";
+
+.advert {
+  &_filters {
+    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    gap: 60px;
+    margin-bottom: 40px;
+
+    &_inactive {
+      max-width: 440px;
+      width: 100%;
+
+      .advert_checkbox {
+        display: none;
+      }
+    }
+  }
+
+  &_select {
+    flex: 1 1 auto;
+  }
+
+  &_checkbox {
+    transform: translateY(-25%);
+  }
+
+  &_title {
+    display: none;
+  }
+
+  &_list {
+    @include adaptive-size(30, 15, gap);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    &_filters {
+      display: none;
+    }
+
+    &_title {
+      display: block;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}

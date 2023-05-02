@@ -1,0 +1,16 @@
+.backlink {
+  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+
+  &_alwaysShow {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}

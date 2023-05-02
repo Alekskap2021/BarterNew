@@ -1,0 +1,128 @@
+@import "/src/styles/globalMixins.scss";
+
+.delivery {
+  grid-row: 3/5;
+
+  &_subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &_title,
+  &_cost {
+    @include adaptive-size(18, 14, font-size);
+    @include adaptive-size(18, 18, line-height);
+    font-weight: 600;
+    text-align-last: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  &_price {
+    @include adaptive-size(30, 10, padding-bottom);
+    @include adaptive-size(80, 25, gap);
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  &_comment {
+    @include adaptive-size(30, 10, margin-bottom);
+    color: var(--color-font-main);
+    font-weight: 600;
+
+    textarea {
+      @include adaptive-size(144, 110, min-height);
+      background-color: transparent;
+      border: 1px solid #e7e7e7;
+      border-radius: 10px;
+      color: var(--color-font-main);
+
+      &::placeholder {
+        color: var(--color-font-secondary);
+      }
+    }
+  }
+
+  &_contacts {
+    @include adaptive-size(30, 8, gap);
+    padding: 25px 0;
+    display: flex;
+    max-width: 67%;
+    margin: 0 auto;
+
+    button {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+
+  &_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-left: auto;
+  }
+
+  @media (max-width: 1024px) {
+    &_price {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-bottom: none;
+    }
+
+    &_btns {
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 55px;
+
+      button {
+        max-width: 550px;
+        width: 100%;
+      }
+    }
+
+    &_contacts {
+      flex-direction: column;
+      max-width: 550px;
+      width: 100%;
+    }
+  }
+}
+
+.productAccordion {
+  display: flex;
+  flex-direction: column;
+
+  &_btn {
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    svg {
+      transition: all 0.3s ease;
+      transform: rotate(-90deg);
+    }
+
+    &_open svg {
+      transform: rotate(0);
+    }
+  }
+
+  &_item:first-child {
+    padding-top: 0;
+  }
+
+  &_item:last-child {
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,24 @@
+@import "/src/styles/globalMixins.scss";
+
+.list {
+  @include adaptive-size(18, 13, grid-column-gap);
+  @include adaptive-size(40, 10, grid-row-gap);
+  @include adaptive-size(40, 15, margin-bottom);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 5px;
+
+  &_row {
+    @include adaptive-size(20, 8, gap);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

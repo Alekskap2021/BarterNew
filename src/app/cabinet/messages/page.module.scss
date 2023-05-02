@@ -1,0 +1,105 @@
+@import "/src/styles/globalMixins.scss";
+
+.layout {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.dialogs {
+  box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25), -4px 4px 16px rgba(172, 172, 172, 0.15),
+    4px 4px 16px rgba(172, 172, 172, 0.15);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  padding: 30px 20px;
+  width: 40%;
+
+  &_type {
+    @include adaptive-size(16, 14, font-size);
+    display: flex;
+    gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 5px;
+
+    a {
+      padding-bottom: 7px;
+      border-bottom: 3px solid transparent;
+      &.active {
+        font-weight: 700;
+        border-bottom: 3px solid var(--color-accent);
+      }
+    }
+  }
+
+  &_support {
+    background: #fef0b4;
+    padding: 15px 20px;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+
+    &_logo {
+      @include adaptive-size(35, 15, margin-bottom);
+    }
+
+    &_msg {
+      @include adaptive-size(16, 12, font-size);
+    }
+
+    &_ico {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+  }
+
+  .link {
+    display: block;
+    padding: 20px 0;
+    position: relative;
+    border-top: 1px solid #e7e7e7;
+
+    &_user {
+      @include adaptive-size(16, 14, font-size);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    &_product {
+      @include adaptive-size(16, 12, font-size);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    &_msg {
+      color: var(--color-font-secondary);
+    }
+
+    &_readed:after {
+      content: "";
+      @include adaptive-size(15, 12, width);
+      @include adaptive-size(15, 12, height);
+      border-radius: 100%;
+      background-color: var(--color-accent);
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+  }
+}
+
+.chat {
+  background-color: var(--color-white);
+  box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25), -4px 4px 16px rgba(172, 172, 172, 0.15),
+    4px 4px 16px rgba(172, 172, 172, 0.15);
+  border-radius: 20px;
+  flex: 1 1 auto;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+}

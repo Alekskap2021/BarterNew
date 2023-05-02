@@ -1,0 +1,37 @@
+@import "/src/styles/globalMixins.scss";
+
+.label {
+  @include adaptive-size(14, 12, font-size);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-font-secondary);
+  padding-bottom: 15px;
+
+  position: relative;
+}
+
+.textarea {
+  padding: 15px 0;
+  @include adaptive-size(20, 15, padding-left);
+  @include adaptive-size(20, 15, padding-right);
+  resize: none;
+  background: #e7e7e7;
+  border-radius: 8px;
+  overflow: hidden;
+
+  border: none;
+}
+
+.error {
+  color: #eb6767;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+.limit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}

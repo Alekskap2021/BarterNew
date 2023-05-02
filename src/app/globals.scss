@@ -1,0 +1,154 @@
+@import "/src/styles/globalMixins.scss";
+// @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap");
+
+:root {
+  --color-font-main: #373538;
+  --color-font-secondary: #868686;
+  --color-accent: #fdce05;
+  --color-white: #fff;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-SemiBold.eot");
+  src: local("Inter Semi Bold"), local("Inter-SemiBold"),
+    url("../assets/fonts/Inter-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/Inter-SemiBold.woff") format("woff"),
+    url("../assets/fonts/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Bold.eot");
+  src: local("Inter Bold"), local("Inter-Bold"),
+    url("../assets/fonts/Inter-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/Inter-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Inter-Bold.woff") format("woff"),
+    url("../assets/fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Medium.eot");
+  src: local("Inter Medium"), local("Inter-Medium"),
+    url("../assets/fonts/Inter-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/Inter-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Inter-Medium.woff") format("woff"),
+    url("../assets/fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  font-family: "Inter";
+  color: var(--color-font-main);
+  font-weight: 500;
+
+  box-sizing: border-box;
+  outline: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  @include adaptive-size(28, 14, font-size);
+  @include adaptive-size(35, 21, line-height);
+  font-weight: 700;
+
+  font-family: "Outfit Bold", sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include adaptive-size(276, 131, padding-bottom);
+
+  background-image: url(../../public/assets/images/mainBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.auth {
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+
+.content {
+  @include adaptive-size(20, 5, padding-left);
+  @include adaptive-size(20, 5, padding-right);
+  @include adaptive-size(20, 15, padding-bottom);
+
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+
+  background-color: var(--color-accent);
+  border-radius: 0px 0px 100px 100px;
+
+  @media (max-width: 768px) {
+    border-radius: 0px;
+  }
+
+  &_auth {
+    border-radius: 0;
+    background-image: url("../../public/assets/images/AuthBg.png");
+    background-position: 0 0;
+    background-size: cover;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 768px) {
+      padding-bottom: 156px;
+    }
+  }
+}
+
+a,
+span,
+p {
+  color: inherit;
+
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px var(--input-bg-color) !important;
+  -webkit-text-fill-color: #999 !important;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}

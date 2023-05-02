@@ -1,0 +1,159 @@
+@import "/src/styles/globalMixins.scss";
+
+.authPage {
+  @include adaptive-size(32, 24, padding-bottom);
+  @include adaptive-size(20, 8, padding-right);
+  @include adaptive-size(32, 24, padding-top);
+  @include adaptive-size(20, 8, padding-left);
+  @include adaptive-size(50, 35, gap);
+
+  width: max(37%, 350px);
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: 0px 6px 18px 8px rgba(156, 156, 156, 0.25), -4px 4px 16px rgba(172, 172, 172, 0.15),
+    4px 4px 16px rgba(172, 172, 172, 0.15);
+  border-radius: 20px;
+
+  &_nav {
+    display: flex;
+    background-color: var(--color-accent);
+    padding: 4px;
+    border-radius: 28px;
+  }
+
+  &_navItem {
+    display: block;
+    padding: 4px 24px;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+
+    &_active {
+      background-color: var(--color-white);
+      box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.08), 0px 2px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &_backLink {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &_input {
+    @include adaptive-size(30, 15, margin-bottom);
+
+    &_hidden {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      top: -100vw;
+    }
+  }
+
+  &_forgotPass {
+    @include adaptive-size(12, 10, font-size);
+    align-self: center;
+    color: var(--color-font-secondary);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &_forgotPassTitle {
+    @include adaptive-size(28, 20, font-size);
+    @include adaptive-size(40, 30, margin-bottom);
+  }
+
+  &_forgotPassDescr {
+    @include adaptive-size(14, 10, font-size);
+    @include adaptive-size(40, 30, margin-bottom);
+  }
+
+  &_checkbox {
+    margin-bottom: 15px !important;
+    font-size: 10px;
+  }
+
+  &_submitBtns {
+    @include adaptive-size(25, 15, gap);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_authWith {
+    position: relative;
+    align-self: center;
+
+    display: flex;
+    gap: 32px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-font-secondary);
+      width: 1px;
+      height: 16px;
+    }
+  }
+
+  &_submit {
+    box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.25);
+  }
+
+  &_repeatQuery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 15px;
+
+    &_title {
+      @include adaptive-size(14, 12, font-size);
+    }
+
+    &_descr {
+      font-size: 14px;
+      color: var(--color-accent);
+    }
+
+    &_btn {
+      font-size: 14px;
+      color: var(--color-accent);
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .auth {
+    &_submitBtns {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(350px, 100% - 10px);
+      flex-direction: column-reverse;
+      padding-bottom: 15px;
+    }
+  }
+}

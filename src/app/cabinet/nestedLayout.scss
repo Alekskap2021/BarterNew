@@ -1,0 +1,29 @@
+@import "/src/styles/globalMixins.scss";
+
+.layout {
+  &_links {
+    @include adaptive-768(16, 14, font-size);
+    @include adaptive-768(20, 18, line-height);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  &_link {
+    padding-bottom: 7px;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease;
+
+    &_active {
+      border-bottom: 3px solid var(--color-accent);
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_links {
+      display: none;
+    }
+  }
+}

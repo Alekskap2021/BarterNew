@@ -1,0 +1,104 @@
+@import "../nestedLayout.scss";
+@import "/src/styles/globalMixins.scss";
+
+.wrapper {
+  padding-bottom: 40px;
+}
+
+.settings {
+  &_changePhoto {
+    @include adaptive-size(40, 20, margin-bottom);
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &_label {
+    color: var(--color-font-secondary);
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+    input {
+      display: none;
+    }
+  }
+
+  &_inputs {
+    @include adaptive-size(60, 10, column-gap);
+    @include adaptive-size(20, 15, row-gap);
+    margin-bottom: 40px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    p {
+      @include adaptive-size(14, 10, font-size);
+      color: var(--color-font-secondary);
+      grid-column: span 2;
+      justify-content: center;
+    }
+
+    label {
+      grid-column: span 2;
+    }
+
+    &_home {
+      grid-column: -3 / span 1 !important;
+    }
+
+    &_flat {
+      grid-column: -2 / span 1 !important;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &_btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &_wrapper {
+    padding: 30px 60px;
+    max-width: 467px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: 20px;
+    box-shadow: 1px 5px 19px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  a {
+    margin-left: auto;
+    color: var(--color-accent);
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_wrapper {
+      max-width: 100%;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+}

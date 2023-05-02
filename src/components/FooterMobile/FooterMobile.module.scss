@@ -1,0 +1,80 @@
+@import "../../styles/globalMixins.scss";
+
+.FooterMobile {
+  @include adaptive-768-mob(120, 78, height);
+  color: var(--color-font-secondary);
+  background-image: url(../../../public/assets/images/ImageFooterMobileBgShadow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top 0 0;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+
+  display: none;
+
+  &_wrapper {
+    @include adaptive-768-mob(45, 20, padding-top);
+    display: flex;
+    justify-content: space-between;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    div {
+      @include adaptive-768-mob(150, 10, gap);
+      display: flex;
+    }
+  }
+
+  &_bg {
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 0;
+  }
+
+  &_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &_linkActive {
+    color: var(--color-accent);
+    svg * {
+      stroke: var(--color-accent);
+    }
+  }
+
+  &_add {
+    @include adaptive-768-mob(100, 60, width);
+    @include adaptive-768-mob(100, 60, height);
+    @include adaptive-768-mob(40, 40, bottom);
+    background-color: var(--color-accent);
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-48%);
+
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

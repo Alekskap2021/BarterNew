@@ -1,0 +1,67 @@
+@import "../../../styles/globalMixins.scss";
+
+.prompt {
+  @include adaptive-768(30, 15, margin-bottom);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  box-shadow: -4px 4px 16px rgba(172, 172, 172, 0.15), 4px 4px 16px rgba(172, 172, 172, 0.15);
+  border-radius: 69px;
+
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 95px;
+  padding-right: 55px;
+  transition: all 0.3s ease;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-family: "Outfit Bold";
+  }
+
+  &.hidden *,
+  &.hidden {
+    // transform: scaleX(0);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transform-origin: left;
+    // position: absolute;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.promptBig {
+  @include adaptive-768(16, 14, font-size);
+  @include adaptive-size(70, 40, margin-bottom);
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 55px;
+  padding-right: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: -4px 4px 16px rgba(172, 172, 172, 0.15), 4px 4px 16px rgba(172, 172, 172, 0.15);
+  border-radius: 120px;
+  background-color: var(--color-white);
+  font-weight: 700 !important;
+
+  svg {
+    @include adaptive-size(109, 60, width);
+    @include adaptive-size(109, 60, height);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

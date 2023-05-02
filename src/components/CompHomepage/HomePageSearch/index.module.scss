@@ -1,0 +1,94 @@
+@import "../../../styles/globalMixins.scss";
+
+.form {
+  &_withFilters {
+    background-color: var(--color-white);
+    @include adaptive-size(20, 15, padding-top);
+    @include adaptive-size(20, 15, padding-bottom);
+    @include adaptive-size(20, 15, padding-left);
+    @include adaptive-size(20, 15, padding-right);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_mainSearch {
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &_margins {
+    @include adaptive-768(70, 40, margin-bottom);
+  }
+
+  &_mainInp,
+  &_select,
+  &_submit {
+    @include adaptive-768(16, 14, font-size);
+    padding: 15px;
+    box-shadow: -4px 4px 16px rgba(172, 172, 172, 0.15), 4px 4px 16px rgba(172, 172, 172, 0.15);
+    border-radius: 107px;
+    border: none;
+  }
+
+  &_mainInp {
+    // width: 100%;
+    background-image: url("../../../assets/icons/Inputs/IconSearch.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% left 15px;
+    padding-left: 62px !important;
+
+    &::placeholder {
+      color: var(--color-font-main);
+    }
+  }
+
+  &_submit {
+    flex: 1 1 auto;
+  }
+
+  &_selectBig {
+    grid-column: span 2;
+  }
+
+  &_select {
+    background-image: url("../../../assets/icons/Inputs/IconGeo.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% left 15px;
+    padding-left: 54px !important;
+  }
+
+  button {
+    // flex: 1 1 auto;
+    text-align: center;
+    height: 100%;
+  }
+
+  label {
+    padding-bottom: 0;
+  }
+
+  &_checkboxes {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+  }
+
+  &_filters {
+    display: grid;
+    align-items: flex-end;
+    gap: 20px;
+    grid-template-columns: 4fr 2fr 2fr;
+    grid-template-rows: auto;
+    margin-bottom: 20px;
+
+    h2 {
+      grid-column: 1/4;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+import { CardItemI } from "@/types/responses/HomepageResponse";
+
+export interface ProductPageI {
+  id: number;
+  name: string;
+  price: number;
+  imgs: string[];
+  coordinates: [string, string];
+  img: string;
+  description: string;
+  user: number;
+  city: string;
+  area: string;
+  category: string;
+  subcategory: string;
+  sscategory: string;
+  views: number;
+  moderate_verify: boolean;
+  size: [string, string, string, string];
+  full_name: string[];
+  str_online: string;
+  is_glass: boolean;
+  international_delivery: boolean;
+  prod_condition: string;
+  exchange_or_sale: "exchange" | "sale" | "both";
+  country: string;
+  region: string;
+  adress: string;
+  auto_renewal: boolean;
+  favorites: number;
+  calls: number;
+  is_mine: boolean;
+  str_date: [string, string];
+  str_time: [string, string];
+  authenticated: boolean;
+  advertising_html: string;
+  authors_products: CardItemI[];
+  similar_products: CardItemI[];
+  like: boolean;
+}

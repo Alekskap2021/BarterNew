@@ -1,0 +1,63 @@
+@import "../../styles/globalMixins.scss";
+
+.pagination {
+  &_btns {
+    @include adaptive-size(105, 85, width);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &_btn {
+    @include adaptive-size(40, 30, width);
+    @include adaptive-size(40, 30, height);
+    background-color: var(--color-accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid transparent;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+
+    &_disabled,
+    &:hover,
+    &:active {
+      border: 2px solid var(--color-accent);
+      background-color: var(--color-white);
+
+      svg * {
+        stroke: var(--color-accent);
+      }
+    }
+
+    &_disabled {
+      pointer-events: none;
+      opacity: 0.5;
+      filter: grayscale(0.3);
+    }
+  }
+
+  &_prev {
+    transform: rotate(-180deg);
+  }
+
+  &_seeAll {
+    @include adaptive-size(16, 10, font-size);
+    @include adaptive-size(73, 20, right);
+    @include adaptive-size(40, 23, bottom);
+    position: absolute;
+
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

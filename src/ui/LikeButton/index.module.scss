@@ -1,0 +1,31 @@
+@import "/src/styles/globalMixins.scss";
+
+.favoritesBtn {
+  @include adaptive-size(35, 13, width);
+  @include adaptive-size(35, 13, height);
+  background-color: var(--color-white);
+
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+
+  svg {
+    transition: all 0.3s ease;
+
+    @include adaptive-size(24, 9, width);
+    @include adaptive-size(24, 9, height);
+    fill: white;
+  }
+
+  &_active svg * {
+    fill: var(--color-accent);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

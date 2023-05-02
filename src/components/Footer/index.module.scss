@@ -1,0 +1,57 @@
+@import "/src/styles/globalMixins.scss";
+
+.Footer {
+  @include adaptive-size(50, 30, padding-top);
+  @include adaptive-size(50, 30, padding-bottom);
+  padding-right: 40px;
+  padding-left: 40px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &_links {
+    @include adaptive-768(16, 14, font-size);
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-template-rows: auto;
+
+    a {
+      color: var(--color-font-secondary);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--color-font-main);
+      }
+    }
+  }
+
+  &_apps {
+    @include adaptive-size(20, 10, gap);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    p {
+      @include adaptive-768(14, 12, font-size);
+
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
+    }
+
+    a:first-child {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+
+    a:last-child {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

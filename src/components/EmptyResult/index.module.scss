@@ -1,0 +1,47 @@
+@import "/src/styles/globalMixins.scss";
+
+.empty {
+  @include adaptive-size(67, 32, padding-top);
+  @include adaptive-size(185, 54, padding-bottom);
+  @include adaptive-size(40, 20, gap);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+  &_img {
+    @include adaptive-size(338, 226, width);
+    @include adaptive-size(411, 274, height);
+    object-fit: contain;
+  }
+
+  &_title {
+    @include adaptive-size(20, 14, font-size);
+    font-weight: 600;
+    line-height: 131%;
+    text-align: center;
+    max-width: 501px;
+  }
+
+  &_descr {
+    @include adaptive-size(16, 14, font-size);
+    line-height: 131%;
+    text-align: center;
+    max-width: 501px;
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &_title {
+      order: -1;
+    }
+  }
+}

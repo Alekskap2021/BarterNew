@@ -1,0 +1,39 @@
+@mixin adaptive-size($pcSize, $mobSize, $sizeValue) {
+  #{$sizeValue}: clamp(
+    #{$mobSize + px},
+    #{$mobSize + px} + #{$pcSize - $mobSize} * ((100vw - 320px) / (1440 - 320)),
+    #{$pcSize + px}
+  );
+}
+
+@mixin adaptive-768($pcSize, $mobSize, $sizeValue) {
+  #{$sizeValue}: clamp(
+    #{$mobSize + px},
+    #{$mobSize + px} + #{$pcSize - $mobSize} * ((100vw - 768px) / (1440 - 768)),
+    #{$pcSize + px}
+  );
+}
+
+@mixin adaptive-1024($pcSize, $mobSize, $sizeValue) {
+  #{$sizeValue}: clamp(
+    #{$mobSize + px},
+    #{$mobSize + px} + #{$pcSize - $mobSize} * ((100vw - 1024px) / (1440 - 1024)),
+    #{$pcSize + px}
+  );
+}
+
+@mixin adaptive-1024-mob($pcSize, $mobSize, $sizeValue) {
+  #{$sizeValue}: clamp(
+    #{$mobSize + px},
+    #{$mobSize + px} + #{$pcSize - $mobSize} * ((100vw - 320px) / (1024 - 320)),
+    #{$pcSize + px}
+  );
+}
+
+@mixin adaptive-768-mob($pcSize, $mobSize, $sizeValue) {
+  #{$sizeValue}: clamp(
+    #{$mobSize + px},
+    #{$mobSize + px} + #{$pcSize - $mobSize} * ((100vw - 320px) / (768 - 320)),
+    #{$pcSize + px}
+  );
+}

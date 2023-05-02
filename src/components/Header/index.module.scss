@@ -1,0 +1,59 @@
+@import "/src/styles/globalMixins.scss";
+
+.Header {
+  background-color: #fff;
+  background-image: url(../../../public/assets/images/HeaderBg.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding: 25px 0;
+  box-shadow: 0px 19px 19px rgba(20, 20, 20, 0.23);
+
+  &_wrapper {
+    max-width: 1120px;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    @include adaptive-768(158, 108, width);
+    height: auto;
+  }
+
+  &_actions {
+    @include adaptive-768(18, 12, font-size);
+    @include adaptive-size(20, 10, gap);
+    display: flex;
+  }
+
+  &_link {
+    @include adaptive-768(10, 5, gap);
+    @include adaptive-768(14, 10, font-size);
+    @include adaptive-size(10, 5, padding-top);
+    @include adaptive-size(10, 5, padding-bottom);
+    @include adaptive-size(15, 10, padding-left);
+    @include adaptive-size(15, 10, padding-right);
+    display: flex;
+    align-items: center;
+
+    svg {
+      @include adaptive-768(18, 15, width);
+      @include adaptive-768(18, 15, height);
+    }
+  }
+
+  &_changeLang {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

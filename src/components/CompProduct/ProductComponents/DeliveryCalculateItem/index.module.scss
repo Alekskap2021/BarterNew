@@ -1,0 +1,35 @@
+@import "/src/styles/globalMixins.scss";
+
+.item {
+  @include adaptive-size(20, 15, padding-top);
+  @include adaptive-size(20, 15, padding-bottom);
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  &_img {
+    @include adaptive-size(16, 12, font-size);
+    @include adaptive-size(20, 15, line-height);
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 6px;
+    margin-right: 20px;
+
+    img {
+      @include adaptive-size(65, 60, width);
+      @include adaptive-size(65, 60, height);
+      object-fit: cover;
+      border-radius: 3px;
+    }
+  }
+
+  &_price {
+    @include adaptive-size(20, 16, font-size);
+    font-weight: 700;
+  }
+}

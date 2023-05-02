@@ -1,0 +1,17 @@
+.categories {
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

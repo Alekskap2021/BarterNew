@@ -1,0 +1,25 @@
+@import "/src/styles/globalMixins.scss";
+
+.ads {
+  padding-top: 40px;
+  @include adaptive-size(437, 343, width);
+  @include adaptive-size(224, 136, height);
+  //   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &_text {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  h3 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
